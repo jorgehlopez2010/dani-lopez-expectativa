@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160914">
+  <meta name="description" content="Dani López Boutique: próximamente nuestra tienda online y lives de moda. Síguenos en Instagram, TikTok y WhatsApp.">
+  <title>Dani López Boutique | Próximamente · Live Shopping</title>
+  <link rel="preload" as="image" href="campana-live-shopping.png">
+  <style>
+    :root{color-scheme:dark;--pink:#ff75b8;--pink-light:#ffd6e9;--bg:#120911}
+    *{box-sizing:border-box}
+    html{background:var(--bg);scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:clamp(8px,2vw,28px);font-family:Arial,Helvetica,sans-serif;background:radial-gradient(ellipse 65% 65% at 50% 40%,#5b1b44 0%,#240e20 55%,#0d070c 100%);color:#fff}
+    main{width:min(100%,950px);margin:auto}
+    .poster{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(255,173,217,.29);border-radius:clamp(12px,2vw,24px);box-shadow:0 0 32px rgba(255,70,160,.16),0 30px 90px rgba(0,0,0,.5)}
+    .poster img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+    /* Las áreas interactivas coinciden con los tres botones impresos en la imagen. */
+    .social{position:absolute;top:86.7%;height:6.25%;display:block;border-radius:999px;z-index:2;text-decoration:none;outline:none;-webkit-tap-highlight-color:transparent;transition:box-shadow .28s ease,transform .28s ease,background-color .28s ease,filter .28s ease}
+    .social.instagram{left:8.1%;width:27.8%}
+    .social.tiktok{left:39.0%;width:24.8%}
+    .social.whatsapp{left:66.7%;width:26.5%}
+    .social:hover,.social:focus-visible{transform:translateY(-5px) scale(1.055);background:rgba(255,124,193,.12);box-shadow:0 0 0 2px rgba(255,200,230,.85),0 0 16px 5px rgba(255,78,172,.82),0 0 36px 10px rgba(255,43,147,.58),inset 0 0 14px rgba(255,190,220,.3);filter:brightness(1.15)}
+    .social:active{transform:translateY(-1px) scale(1.02)}
+    .social::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.55) 45%,transparent 58%);background-size:240% 100%;background-position:130% 0;opacity:0;pointer-events:none}
+    .social:hover::after,.social:focus-visible::after{opacity:.75;animation:glint .7s ease-out both}
+    @keyframes glint{from{background-position:130% 0}to{background-position:-130% 0}}
+    .footer{padding:13px 12px 4px;text-align:center;color:#d4b4c6;font-size:12px;letter-spacing:.03em}
+    .footer a{color:#ffd2e8;text-underline-offset:3px}
+    @media (hover:none){.social:active{background:rgba(255,124,193,.22);box-shadow:0 0 0 2px var(--pink-light),0 0 18px 6px var(--pink)}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="poster" aria-label="Dani López Boutique: próximamente página web con Live Shopping y lives de moda. Síguenos en redes sociales.">
+      <img src="campana-live-shopping.png" width="1199" height="1312" alt="Dani López Boutique. Próximamente nuestra página web con Live Shopping y lives de moda. Síguenos en Instagram, TikTok y WhatsApp.">
+      <a class="social instagram" href="https://www.instagram.com/boutiquedanilopez_/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram de Dani López Boutique" title="Seguirnos en Instagram"><span class="sr-only" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">Instagram</span></a>
+      <a class="social tiktok" href="https://www.tiktok.com/@ventas.danilopez" target="_blank" rel="noopener noreferrer" aria-label="Abrir TikTok de Dani López Boutique" title="Ver nuestros videos en TikTok"><span class="sr-only" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">TikTok</span></a>
+      <a class="social whatsapp" href="https://wa.me/573006953032?text=Hola%2C%20quiero%20conocer%20las%20novedades%20de%20Dani%20L%C3%B3pez%20Boutique" target="_blank" rel="noopener noreferrer" aria-label="Escribir al WhatsApp de Dani López Boutique" title="Escríbenos por WhatsApp"><span class="sr-only" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">WhatsApp</span></a>
+    </div>
+    <p class="footer">Muy pronto: nuestra nueva experiencia de moda y compras en vivo. · <a href="https://www.instagram.com/boutiquedanilopez_/" target="_blank" rel="noopener noreferrer">@boutiquedanilopez_</a></p>
+  </main>
+</body>
+</html>
