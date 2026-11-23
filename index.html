@@ -3,43 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#160914">
-  <meta name="description" content="Dani López Boutique: próximamente nuestra tienda online y lives de moda. Síguenos en Instagram, TikTok y WhatsApp.">
+  <meta name="theme-color" content="#180b17">
+  <meta name="description" content="Dani López Boutique: próximamente nuestra tienda con Live Shopping y lives de moda. Encuéntranos en Instagram, TikTok y WhatsApp.">
   <title>Dani López Boutique | Próximamente · Live Shopping</title>
   <link rel="preload" as="image" href="campana-live-shopping.png">
   <style>
-    :root{color-scheme:dark;--pink:#ff75b8;--pink-light:#ffd6e9;--bg:#120911}
-    *{box-sizing:border-box}
-    html{background:var(--bg);scroll-behavior:smooth}
-    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:clamp(8px,2vw,28px);font-family:Arial,Helvetica,sans-serif;background:radial-gradient(ellipse 65% 65% at 50% 40%,#5b1b44 0%,#240e20 55%,#0d070c 100%);color:#fff}
-    main{width:min(100%,950px);margin:auto}
-    .poster{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(255,173,217,.29);border-radius:clamp(12px,2vw,24px);box-shadow:0 0 32px rgba(255,70,160,.16),0 30px 90px rgba(0,0,0,.5)}
-    .poster img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
-    /* Las áreas interactivas coinciden con los tres botones impresos en la imagen. */
-    .social{position:absolute;top:86.7%;height:6.25%;display:block;border-radius:999px;z-index:2;text-decoration:none;outline:none;-webkit-tap-highlight-color:transparent;transition:box-shadow .28s ease,transform .28s ease,background-color .28s ease,filter .28s ease}
-    .social.instagram{left:8.1%;width:27.8%}
-    .social.tiktok{left:39.0%;width:24.8%}
-    .social.whatsapp{left:66.7%;width:26.5%}
-    .social:hover,.social:focus-visible{transform:translateY(-5px) scale(1.055);background:rgba(255,124,193,.12);box-shadow:0 0 0 2px rgba(255,200,230,.85),0 0 16px 5px rgba(255,78,172,.82),0 0 36px 10px rgba(255,43,147,.58),inset 0 0 14px rgba(255,190,220,.3);filter:brightness(1.15)}
-    .social:active{transform:translateY(-1px) scale(1.02)}
-    .social::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.55) 45%,transparent 58%);background-size:240% 100%;background-position:130% 0;opacity:0;pointer-events:none}
-    .social:hover::after,.social:focus-visible::after{opacity:.75;animation:glint .7s ease-out both}
-    @keyframes glint{from{background-position:130% 0}to{background-position:-130% 0}}
-    .footer{padding:13px 12px 4px;text-align:center;color:#d4b4c6;font-size:12px;letter-spacing:.03em}
-    .footer a{color:#ffd2e8;text-underline-offset:3px}
-    @media (hover:none){.social:active{background:rgba(255,124,193,.22);box-shadow:0 0 0 2px var(--pink-light),0 0 18px 6px var(--pink)}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+    :root {
+      color-scheme: dark;
+      --rose: #ee94be;
+      --rose-soft: #f9c8df;
+      --rose-muted: #b5638c;
+      --ink: #180b17;
+      --line: rgba(242,159,196,.63);
+      --ease: cubic-bezier(.2,.72,.26,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 320px; background:var(--ink); }
+    body {
+      margin:0; min-height:100vh; padding:clamp(10px,2vw,26px);
+      display:grid; place-items:center;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+      color:#fff8fb;
+      background:radial-gradient(ellipse at 50% 35%,#4d1a3b 0%,#241020 51%,#0e090f 100%);
+    }
+    main { width:min(100%,960px); }
+    .campaign {
+      overflow:hidden; border-radius:clamp(14px,2vw,24px);
+      border:1px solid rgba(241,167,202,.23);
+      background:#1c0b19;
+      box-shadow:0 24px 85px rgba(0,0,0,.36),0 0 33px rgba(198,85,141,.12);
+    }
+    .hero {display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+    .social-area {
+      padding:clamp(20px,3vw,33px) clamp(16px,5vw,55px) clamp(26px,4vw,45px);
+      text-align:center;
+      background:linear-gradient(180deg,#271022 0%,#220e1d 32%,#160b15 100%);
+      position:relative;
+    }
+    .social-area::before {
+      content:"";position:absolute;top:0;left:14%;right:14%;height:1px;
+      background:linear-gradient(90deg,transparent,rgba(245,161,200,.45),transparent);
+    }
+    .eyebrow {
+      margin:0 0 24px; font-size:clamp(.78rem,1.5vw,1rem);
+      font-weight:650;letter-spacing:.22em;text-transform:uppercase;
+      color:#f6d6e6;
+    }
+    .social-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.5vw,18px)}
+    .social-button {
+      position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;
+      gap:clamp(7px,1.1vw,14px);min-height:clamp(58px,7vw,76px);padding:12px 14px;
+      border:1px solid var(--line);border-radius:999px;
+      background:linear-gradient(145deg,rgba(74,30,55,.76),rgba(27,14,27,.96));
+      color:#fff5fa;text-decoration:none;font-size:clamp(.95rem,1.6vw,1.15rem);font-weight:570;
+      letter-spacing:.005em;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 8px 24px rgba(0,0,0,.18);
+      outline:0;cursor:pointer;-webkit-tap-highlight-color:transparent;
+      transition:transform 300ms var(--ease),background 300ms ease,color 300ms ease,
+        border-color 300ms ease,box-shadow 300ms ease,opacity 300ms ease;
+    }
+    .social-button svg {width:clamp(23px,2.8vw,31px);height:clamp(23px,2.8vw,31px);flex:none;fill:currentColor;transition:transform 300ms var(--ease),color 300ms ease}
+    .social-button:hover {
+      transform:translateY(-3px) scale(1.035);
+      color:#fff;
+      border-color:#ffd4e6;
+      background:linear-gradient(145deg,#8f456c,#51283f 65%,#3a1b31);
+      box-shadow:0 9px 28px rgba(195,91,142,.25),0 0 0 1px rgba(248,176,212,.23),inset 0 1px 0 rgba(255,255,255,.25);
+    }
+    .social-button:hover svg {transform:scale(1.07)}
+    .social-button:focus-visible {
+      transform:translateY(-2px) scale(1.025);
+      border-color:#ffe5ef;outline:3px solid #ffd0e5;outline-offset:4px;
+      background:linear-gradient(145deg,#874167,#47243e);
+    }
+    .social-button:active {transform:translateY(0) scale(.975);background:#a0517c;box-shadow:inset 0 3px 10px rgba(0,0,0,.23)}
+    .social-button:disabled,.social-button[aria-disabled="true"] {
+      cursor:not-allowed;opacity:.42;filter:saturate(.4);transform:none;box-shadow:none;
+    }
+    .social-button:disabled:hover,.social-button[aria-disabled="true"]:hover {
+      transform:none;background:linear-gradient(145deg,rgba(74,30,55,.76),rgba(27,14,27,.96));border-color:var(--line);box-shadow:none;
+    }
+    .footer {margin:18px 0 0;text-align:center;font-size:.76rem;color:#c6a4b8;letter-spacing:.02em}
+    @media(max-width:590px) {
+      .social-grid{grid-template-columns:1fr;gap:12px;max-width:390px;margin:auto}
+      .social-button{min-height:58px;font-size:1.03rem;}
+      .eyebrow{line-height:1.6;letter-spacing:.16em;margin-bottom:20px}
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .social-button,.social-button svg{transition:none!important}
+    }
   </style>
 </head>
 <body>
   <main>
-    <div class="poster" aria-label="Dani López Boutique: próximamente página web con Live Shopping y lives de moda. Síguenos en redes sociales.">
-      <img src="campana-live-shopping.png" width="1199" height="1312" alt="Dani López Boutique. Próximamente nuestra página web con Live Shopping y lives de moda. Síguenos en Instagram, TikTok y WhatsApp.">
-      <a class="social instagram" href="https://www.instagram.com/boutiquedanilopez_/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram de Dani López Boutique" title="Seguirnos en Instagram"><span class="sr-only" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">Instagram</span></a>
-      <a class="social tiktok" href="https://www.tiktok.com/@ventas.danilopez" target="_blank" rel="noopener noreferrer" aria-label="Abrir TikTok de Dani López Boutique" title="Ver nuestros videos en TikTok"><span class="sr-only" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">TikTok</span></a>
-      <a class="social whatsapp" href="https://wa.me/573006953032?text=Hola%2C%20quiero%20conocer%20las%20novedades%20de%20Dani%20L%C3%B3pez%20Boutique" target="_blank" rel="noopener noreferrer" aria-label="Escribir al WhatsApp de Dani López Boutique" title="Escríbenos por WhatsApp"><span class="sr-only" style="position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden">WhatsApp</span></a>
+    <div class="campaign">
+      <img class="hero" src="campana-live-shopping.png" width="1199" height="1090"
+           alt="Dani López Boutique. Próximamente nuestra página web con Live Shopping y lives de moda. Prendas y transmisiones en vivo." fetchpriority="high">
+      <nav class="social-area" aria-label="Redes sociales de Dani López Boutique">
+        <h1 class="eyebrow">Síguenos en nuestras redes</h1>
+        <div class="social-grid">
+          <a class="social-button" href="https://www.instagram.com/boutiquedanilopez_/" target="_blank" rel="noopener noreferrer" aria-label="Visitar el Instagram de Dani López Boutique">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a class="social-button" href="https://www.tiktok.com/@ventas.danilopez" target="_blank" rel="noopener noreferrer" aria-label="Visitar el TikTok de Dani López Boutique">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 2h-3v13.1a3.1 3.1 0 1 1-2.8-3.08V9a6.1 6.1 0 1 0 5.8 6.1V8.3a8.8 8.8 0 0 0 5 1.55V6.8A5.8 5.8 0 0 1 16 2Z"/></svg>
+            <span>TikTok</span>
+          </a>
+          <a class="social-button" href="https://wa.me/573006953032?text=Hola%2C%20quiero%20conocer%20las%20novedades%20de%20Dani%20L%C3%B3pez%20Boutique" target="_blank" rel="noopener noreferrer" aria-label="Escribir al WhatsApp de Dani López Boutique">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.35 11.35 0 0 0 12.08 0C5.53 0 .2 5.3.2 11.86c0 2.1.55 4.16 1.6 5.98L0 24l6.33-1.66a11.8 11.8 0 0 0 5.75 1.47h.01c6.55 0 11.87-5.33 11.9-11.88a11.8 11.8 0 0 0-3.49-8.43Zm-8.42 18.3a9.85 9.85 0 0 1-5.03-1.38l-.36-.21-3.75.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.5-5.31c0-5.46 4.44-9.9 9.9-9.9a9.8 9.8 0 0 1 7 2.9 9.8 9.8 0 0 1 2.89 7.01c-.02 5.47-4.46 9.93-9.91 9.93Zm5.42-7.43c-.3-.15-1.75-.86-2.02-.96-.27-.1-.46-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07a8.1 8.1 0 0 1-2.38-1.47 9.03 9.03 0 0 1-1.65-2.05c-.17-.3-.02-.46.13-.61.13-.13.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.49-.66-.5h-.56c-.2 0-.52.08-.79.37s-1.04 1.02-1.04 2.48 1.07 2.86 1.22 3.06c.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.75-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.12-.27-.2-.56-.34Z"/></svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+        <p class="footer">Muy pronto: moda, estilo y compras en vivo.</p>
+      </nav>
     </div>
-    <p class="footer">Muy pronto: nuestra nueva experiencia de moda y compras en vivo. · <a href="https://www.instagram.com/boutiquedanilopez_/" target="_blank" rel="noopener noreferrer">@boutiquedanilopez_</a></p>
   </main>
 </body>
 </html>
